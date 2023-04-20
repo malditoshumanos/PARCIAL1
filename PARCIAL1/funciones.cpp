@@ -164,10 +164,10 @@ void guardarMateria(char mode){
     }
     char* infoMateria = new char[32]; // Máximo 32 caracteres representan los datos a guardar
 
-    std::cout << "Ingrese los datos de la materia: ";
+    std::cout << "      Ingrese los datos de la materia:\n";
 
     if(mode == 'A'){ // Al guardar materia académica se debe específicar el código
-        std::cout << "Codigo: ";
+        std::cout << "          Codigo: ";
         std::cin >> infoMateria;
         outFile << infoMateria;
     } else if (mode == 'O'){ // Al guardar actividad académica el código se pone automáticamente
@@ -178,13 +178,13 @@ void guardarMateria(char mode){
     outFile << '/';
 
 
-    std::cout << "Nombre: ";
+    std::cout << "          Nombre: ";
     std::cin >> infoMateria;
     outFile << infoMateria;
     outFile << '/';
 
     while(true){ // Guardar horas de clase
-        std::cout << "Horas de clase (ej. de formato: L08, W16)(X para dejar de introducir horas de clase): ";
+        std::cout << "          Horas de clase (ej. de formato: L08, W16)(X para dejar de introducir horas de clase): ";
         std::cin >> infoMateria;
         if(infoMateria[0] == 'X' || infoMateria[0] == 'x') break;
         outFile << infoMateria;
@@ -192,7 +192,7 @@ void guardarMateria(char mode){
     outFile << '/';
 
     if(mode == 'A'){ // Si es materia académica tiene créditos
-        std::cout << "Numero de creditos: ";
+        std::cout << "          Numero de creditos: ";
         std::cin >> infoMateria;
         outFile << infoMateria;
         outFile << '/';
